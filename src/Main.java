@@ -1,8 +1,11 @@
 import apprenant.Apprenant;
 
 import javax.sound.midi.Soundbank;
+import java.util.ArrayList;
 import java.util.Scanner;
     public class Main {
+        static Apprenant apprenant1 = new Apprenant();
+        static ArrayList<Apprenant> apprenants = new ArrayList<>();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choix;
@@ -18,21 +21,26 @@ import java.util.Scanner;
             choix = scanner.nextInt();
             switch (choix){
                 case 1 :
-
+                    apprenant1.Ajouter(apprenants);
                     break;
                 case 2 :
+                    //MODIFIER
 
                     break;
                 case 3 :
-
+                    //SUPPRIMER
+                    
                     break;
                 case 4 :
-
+                    //CONSULTER
+                    apprenant1.Consulter(apprenants);
                     break;
                 case 5 :
+                    //RECHERCHER
 
                     break;
                 case 6 :
+                    //QUITTER LE PROGRAMME
                     System.out.printf("Au revoir !\n");
                     break;
             }
