@@ -100,7 +100,7 @@ public class Apprenant {
         scanner.nextLine(); // Consume newline character
 
         if (choice >= 0 && choice < apprenants.size()) {
-            Apprenant A = apprenants.get(choice);
+            Apprenant A = apprenants.get(choice - 1);
 
             System.out.println("Quel attribut souhaitez-vous modifier ?");
             System.out.println("1. Nom");
@@ -142,6 +142,19 @@ public class Apprenant {
                     System.out.println("Choix invalide");
                     break;
             }
+        } else {
+            System.out.println("Index d'apprenant invalide.");
+        }
+    }
+    public void Supprimer(ArrayList<Apprenant> apprenants){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Quel apprenant souhaitez-vous supprimer ?");
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline character
+
+        if (choice > 0 && choice <= apprenants.size()) {
+            Apprenant A = apprenants.remove(choice - 1);
+            System.out.println("Apprenant supprimé avec succès : " + A.getNom());
         } else {
             System.out.println("Index d'apprenant invalide.");
         }
