@@ -21,24 +21,22 @@ public class Main {
             choix = scanner.nextInt();
             switch (choix){
                 case 1 :
-                    //AJOUTER
                     apprenant1.Ajouter(apprenants);
                     break;
                 case 2:
-                    //MODIFIER
+                    // Modifier
                     apprenant1.Modifier(apprenants);
                     break;
                 case 3 :
                     //SUPPRIMER
-
+                    apprenant1.Supprimer(apprenants);
                     break;
                 case 4:
-                    //CONSULTER
                     Scanner input = new Scanner(System.in);
                     System.out.println("Enter the index of the student to consult: ");
                     int index = input.nextInt();
                     if (index >= 0 && index < apprenants.size()) {
-                        Apprenant studentToConsult = apprenants.get(index);
+                        Apprenant studentToConsult = apprenants.get(index - 1);
                         apprenant1.Consulter(studentToConsult);
                     } else {
                         System.out.println("Invalid index.");
@@ -46,7 +44,7 @@ public class Main {
                     break;
                 case 5 :
                     //RECHERCHER
-
+                    
                     break;
                 case 6 :
                     //QUITTER LE PROGRAMME
